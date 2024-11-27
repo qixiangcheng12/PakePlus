@@ -23,7 +23,7 @@ fn main() {
     tauri::Builder::default()
         .setup(|app| {
             let app_handle = app.handle();
-            let window_json = r#"{"label":"tob","url":"https://yuanbanyingyu.cn:8090/pc","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","fileDropEnabled":true,"center":true,"width":800,"height":600,"minWidth":null,"minHeight":null,"maxWidth":null,"maxHeight":null,"resizable":true,"maximizable":true,"minimizable":true,"closable":true,"title":"兔比TOB","fullscreen":false,"focus":false,"transparent":false,"maximized":false,"visible":true,"decorations":true,"alwaysOnTop":false,"contentProtected":false,"skipTaskbar":false,"titleBarStyle":"Visible","hiddenTitle":false,"acceptFirstMouse":false,"tabbingIdentifier":"","additionalBrowserArgs":""}"#;
+            let window_json = r#"{"label":"tob","url":"https://yuanbanyingyu.cn:8090/pc","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","fileDropEnabled":true,"center":true,"width":800,"height":600,"minWidth":900,"minHeight":1200,"maxWidth":1400,"maxHeight":1600,"resizable":false,"maximizable":true,"minimizable":true,"closable":false,"title":"兔比TOB","fullscreen":false,"focus":false,"transparent":false,"maximized":false,"visible":false,"decorations":true,"alwaysOnTop":true,"contentProtected":false,"skipTaskbar":false,"titleBarStyle":"Transparent","hiddenTitle":false,"acceptFirstMouse":true,"tabbingIdentifier":"","additionalBrowserArgs":"","theme":"Light"}"#;
             match json_to_window_config(window_json) {
                 Ok(config) => {
                     println!("Parsed WindowConfig: {:?}", config);
